@@ -17,4 +17,4 @@ def sensor():
 
 @app.route('/data')
 def data():
-    return jsonify(data)
+    return jsonify(last_data)
