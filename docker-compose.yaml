@@ -1,0 +1,14 @@
+version: '2'
+services:
+  dnclient:
+    image: definednet/dnclient
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - defined:/etc/defined
+    environment:
+      - DN_ENROLLMENT_CODE=RcMrKVl38lCiJxM5Jku9ERRJdrFnSaBI7Rwb7KXL830
+    restart: unless-stopped
+volumes:
+  defined:
