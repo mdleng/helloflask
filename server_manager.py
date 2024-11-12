@@ -35,4 +35,5 @@ if __name__ == "__main__":
     start_server()
     time.sleep(10)
     stop_server()
+    print('stop')
     
