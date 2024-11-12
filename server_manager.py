@@ -2,7 +2,7 @@ from werkzeug.serving import make_server
 import threading
 import time
 import flask
-import log
+import logging as log
 class ServerThread(threading.Thread):
 
     def __init__(self, app):
