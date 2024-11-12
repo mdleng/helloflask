@@ -26,6 +26,10 @@ def start_server():
     @app.route('/')
     def hello_world():
         return ' Ciao Hello, World! ciao bello come stai '
+    @app.route('/stop')
+    def stop():
+        server.shutdown()
+        return 'passo e chiudo'
     server = ServerThread(app)
     server.start()
     print('server started')
