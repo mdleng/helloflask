@@ -21,7 +21,7 @@ class ServerThread(threading.Thread):
 
 def start_server():
     global server
-    app = Flask('hello')
+    app = flask.Flask('hello')
     # App routes defined here
     @app.route('/')
     def hello_world():
