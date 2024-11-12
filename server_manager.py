@@ -1,5 +1,6 @@
 from werkzeug.serving import make_server
 import threading
+import time
 class ServerThread(threading.Thread):
 
     def __init__(self, app):
@@ -27,3 +28,11 @@ def start_server():
 def stop_server():
     global server
     server.shutdown()
+
+
+if __name__ == "__main__":
+    print('start')
+    start_server()
+    time.sleep(10)
+    stop_server()
+    
