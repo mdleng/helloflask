@@ -13,7 +13,7 @@ class ServerThread(threading.Thread):
         self.ctx.push()
 
     def run(self):
-        log.info('starting server')
+        print('starting server')
         self.server.serve_forever()
 
     def shutdown(self):
@@ -25,7 +25,7 @@ def start_server():
     # App routes defined here
     server = ServerThread(app)
     server.start()
-    log.info('server started')
+    print('server started')
 
 def stop_server():
     global server
@@ -33,9 +33,11 @@ def stop_server():
 
 
 if __name__ == "__main__":
-    print('start')
+    print('start main')
     start_server()
-    time.sleep(10)
+    time.sleep(60)
+    server.join()
     stop_server()
-    print('stop')
+    
+    print('stop main')
     
