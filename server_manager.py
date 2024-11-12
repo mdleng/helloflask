@@ -21,8 +21,11 @@ class ServerThread(threading.Thread):
 
 def start_server():
     global server
-    app = flask.Flask('hello')
+    app = Flask('hello')
     # App routes defined here
+    @app.route('/')
+    def hello_world():
+        return ' Ciao Hello, World! ciao bello come stai '
     server = ServerThread(app)
     server.start()
     print('server started')
@@ -32,11 +35,13 @@ def stop_server():
     server.shutdown()
 
 
+
+    
+
 if __name__ == "__main__":
     print('start main')
     start_server()
     time.sleep(60)
-    server.join()
     stop_server()
     
     print('stop main')
